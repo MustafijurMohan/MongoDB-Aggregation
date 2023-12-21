@@ -1,0 +1,13 @@
+        MongoDB Aggregation
+
+
+/* Add Fields Method aggregate */
+
+
+db.products.aggregate([
+{$match: {Unit: 'lt'}},
+{$addFields: {'NewField': 'New Value'}}
+{$addFields: {'NewField': {$toDouble: '$Price'}}}
+])
+
+

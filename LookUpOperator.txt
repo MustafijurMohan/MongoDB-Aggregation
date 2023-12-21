@@ -1,0 +1,10 @@
+        MongoDB Aggregation
+
+
+/* LookUp Joining Operator Method aggregate */
+
+
+db.products.aggregate([
+{$lookup: {from: 'categories', localField: 'CategoryID', foreignField: 'CategoryID', as: 'Category'}},
+{$lookup: {from: 'brands', localField: 'BrandID', foreignField: 'BrandID', as: 'Brand'}},
+])

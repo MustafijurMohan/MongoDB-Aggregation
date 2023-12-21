@@ -1,0 +1,12 @@
+        MongoDB Aggregation
+
+
+/* Selecte All Method find */
+db.employee.find({})
+
+
+
+/* Selecte All Method Aggregate */
+db.employee.aggregate([])
+
+

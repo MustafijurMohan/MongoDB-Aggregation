@@ -1,0 +1,9 @@
+
+        MongoDB Aggregation
+
+
+/* Skip With Limit Method find */
+db.employee.find({}).skip(10).limit(3)
+
+/* Skip With Limit Method aggregate */
+db.employee.aggregate([{$skip: 10}, {$limit: 3}])

@@ -1,0 +1,41 @@
+        MongoDB Aggregation
+
+
+/* String Operator Method aggregate */
+
+// concat Operator
+db.products.aggregate([
+{$match: {Unit: 'lt'}},
+{$addFields: {'NewField': {$concat: ['$Price', ' ', '$Details', ' ', '$Unit']}}}
+])
+// Out Put  ==> "NewField" : "100000 Refrigerator lt"
+
+// split Operator
+db.products.aggregate([
+{$match: {Unit: 'lt'}},
+{$addFields: {'NewField': {$split: ['$Name', ' ']}}}
+])
+// Out Put  ==> "NewField" : [
+        "560",
+        "ltr",
+        "Refrigerator"
+    ]
+
+
+// toUpper Operator
+db.products.aggregate([
+{$match: {Unit: 'lt'}},
+{$addFields: {'NewField': {$toUpper: ['$Details',]}}}
+])
+// Out Put  ==> "NewField" : "REFRIGERATOR"
+
+
+// toLower Operator
+db.products.aggregate([
+{$match: {Unit: 'lt'}},
+{$addFields: {'NewField': {$toLower: ['$Details',]}}}
+])
+// Out Put  ==> "NewField" : "refrigerator"
+
+
+

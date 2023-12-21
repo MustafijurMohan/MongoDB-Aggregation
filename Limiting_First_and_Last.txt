@@ -1,0 +1,14 @@
+        MongoDB Aggregation
+
+
+/* Limiting first and last Method find */
+db.employee.find({}).sort({_id: 1}).limit(5)    //Asending
+db.employee.find({}).sort({_id: -1}).limit(5)    //Descending
+
+
+
+/* Limiting first and last Method Aggregate */
+db.employee.aggregate([{$sort: {_id: 1}}, {$limit: 5}])   //Asending
+db.employee.aggregate([{$sort: {_id: -1}}, {$limit: 5}])  //Descending
+
+

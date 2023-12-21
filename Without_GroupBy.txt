@@ -1,0 +1,6 @@
+        MongoDB Aggregation
+
+
+/* Group By Msx & Min Method aggregate */
+
+db.employee.aggregate([{$group: {_id: 0, Total: {$sum: '$salary'}}}])

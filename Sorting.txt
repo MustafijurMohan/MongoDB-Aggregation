@@ -1,0 +1,13 @@
+        MongoDB Aggregation
+
+
+/* Sorting Method find */
+db.employee.find({}).sort({salary: 1})   //Asending
+db.employee.find({}).sort({salary: -1})   //Descending
+
+
+
+/* Sorting Method Aggregate */
+db.employee.aggregate([{$sort: {salary: 1}}])    //Asending
+db.employee.aggregate([{$sort: {salary: -1}}])    //Descending
+

@@ -1,0 +1,13 @@
+
+        MongoDB Aggregation
+
+/* Select By Match In Operator Method find */
+db.employee.find({name: {$in: ['Jony','Kabir', 'Rabbil']}})
+
+
+
+/* Select By Match In Operator Method aggregate */
+db.employee.aggregate([{$match: {name: {$in: ['Rain', 'Rabbil', 'Jony']}}}])
+
+
+

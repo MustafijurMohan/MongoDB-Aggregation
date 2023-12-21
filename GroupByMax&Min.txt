@@ -1,0 +1,10 @@
+        MongoDB Aggregation
+
+
+/* Group By Msx & Min Method aggregate */
+
+db.employee.aggregate([{$group: {_id: '$city', Maximun: {$max: '$salary'}}}])
+
+
+db.employee.aggregate([{$group: {_id: '$city', Minimun: {$min: '$salary'}}}])
+

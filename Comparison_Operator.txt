@@ -1,0 +1,19 @@
+        MongoDB Aggregation
+
+
+/* Comparison Operator Method aggregate */
+
+{$eq, $ne, $gt, $gte, $lt, $lte}
+db.employee.aggregate([
+{$addFields: {'NewField': {$eq: ['$salary', 40000]}}}
+])
+
+// return true, false
+// Output ==>  "NewField" : true
+
+
+
+
+
+
+

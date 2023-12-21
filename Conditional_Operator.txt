@@ -1,0 +1,23 @@
+        MongoDB Aggregation
+
+
+/* Conditional Operator Method aggregate */
+
+db.employee.aggregate(
+    [
+        {
+            $project:
+                {
+                    _id: 0,
+                    SalaryMargin: {
+                        $cond: { if: { $lte: ['$salary', 40000] }, then: 'Low Salary', else: 'Standard Salary' }
+                    },
+                    salary: 1,
+                    city: 1
+
+                }
+        }
+    ]
+)
+
+

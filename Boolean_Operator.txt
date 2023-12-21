@@ -1,0 +1,63 @@
+        MongoDB Aggregation
+
+
+/* Boolean Operator Method aggregate */
+
+//and Operator
+db.employee.aggregate(
+    [
+        {
+            $addFields:
+                {
+                    'NewField':
+                        {
+                            $and:
+                                [
+                                    {$eq: ['$salary', 100000]},
+                                    {$eq: ['$city', 'London']}
+                                ]
+                        }
+                }
+        }
+    ]
+)
+
+
+//or Operator
+db.employee.aggregate(
+    [
+        {
+            $addFields:
+                {
+                    'NewField':
+                        {
+                            $or:
+                                [
+                                    {$eq: ['$salary', 40000]},
+                                    {$eq: ['$city', 'Dhaka']}
+                                ]
+                        }
+                }
+        }
+    ]
+)
+
+// not Operator
+db.employee.aggregate(
+    [
+        {
+            $addFields:
+                {
+                    'NewField':
+                        {
+                            $not:
+                                [
+                                    {$eq: ['$salary', 40000]}
+                                ]
+                        }
+                }
+        }
+    ]
+)
+
+

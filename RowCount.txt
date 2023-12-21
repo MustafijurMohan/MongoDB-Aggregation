@@ -1,0 +1,11 @@
+        MongoDB Aggregation
+
+
+/* Row Count Method find */
+db.employee.find({}).count('total')
+
+
+
+/* Row Count Method Aggregate */
+db.employee.aggregate([{$count: 'Total'}])
+

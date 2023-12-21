@@ -1,0 +1,11 @@
+
+        MongoDB Aggregation
+
+/*Select Like Search Method find */
+db.employee.find({name: /A/})
+db.employee.find({designation: /Developer/})
+
+
+/*Select Like Search Method aggregate */
+db.employee.aggregate([{$match: {name: /A/}}])
+db.employee.aggregate([{$match: {designation: /Engineer/}}])

@@ -1,0 +1,16 @@
+        MongoDB Aggregation
+
+
+/* Group By Multiple Operator Method aggregate */
+
+
+db.employee.aggregate([
+{$facet: 
+    {
+        'Total': [{$count: 'Total'}],
+        'Data': []
+    }
+}
+])
+
+

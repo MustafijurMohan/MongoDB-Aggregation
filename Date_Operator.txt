@@ -1,0 +1,70 @@
+        MongoDB Aggregation
+
+
+/* Date Operator Method aggregate */
+
+//dayOfYear
+db.products.aggregate(
+[
+{$match: {Unit: 'lt'}},
+{$addFields: {'NewField': {$dayOfYear: '$CreatedDate'}}}
+]
+)
+
+
+//dayOfMonth
+db.products.aggregate(
+[
+{$match: {Unit: 'lt'}},
+{$addFields: {'NewField': {$dayOfMonth: '$CreatedDate'}}}
+]
+)
+
+
+//dayOfWeek
+db.products.aggregate(
+[
+{$match: {Unit: 'lt'}},
+{$addFields: {'NewField': {$dayOfWeek: '$CreatedDate'}}}
+]
+)
+
+//year
+db.products.aggregate(
+[
+{$match: {Unit: 'lt'}},
+{$addFields: {'NewField': {$year: '$CreatedDate'}}}
+]
+)
+
+
+//month
+db.products.aggregate(
+[
+{$match: {Unit: 'lt'}},
+{$addFields: {'NewField': {$month: '$CreatedDate'}}}
+]
+)
+
+//week
+db.products.aggregate(
+[
+{$match: {Unit: 'lt'}},
+{$addFields: {'NewField': {$week: '$CreatedDate'}}}
+]
+)
+
+
+//hour
+db.products.aggregate(
+[
+{$match: {Unit: 'lt'}},
+{$addFields: {'NewField': {$hour: '$CreatedDate'}}}
+]
+)
+
+
+
+
+
+

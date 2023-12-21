@@ -1,0 +1,19 @@
+        MongoDB Aggregation
+
+
+/* Select Match Condition Method find */
+db.employee.find({salary: {$gt: 40000}})
+db.employee.find({salary: {$gte: 40000}})
+
+db.employee.find({salary: {$lt: 40000}})
+db.employee.find({salary: {$lte: 40000}})
+
+
+
+/* Select Match Condition Method aggregate */
+db.employee.aggregate([{$match: {salary: {$gt: 40000}}}])
+db.employee.aggregate([{$match: {salary: {$gte: 40000}}}])
+
+db.employee.aggregate([{$match: {salary: {$lt: 40000}}}])
+db.employee.aggregate([{$match: {salary: {$lte: 40000}}}])
+

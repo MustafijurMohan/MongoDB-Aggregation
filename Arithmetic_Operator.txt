@@ -1,0 +1,50 @@
+        MongoDB Aggregation
+
+
+/* Arithmetic Operator Method aggregate */
+
+// add Operator
+db.products.aggregate([
+{$match: {Unit: 'lt'}},
+{$addFields: {'NewField': {$add: [2,5, 4, 10]}}}
+])
+// Out Put  ==>  "NewField" : 21.0
+
+// divide Operator
+db.products.aggregate([
+{$match: {Unit: 'lt'}},
+{$addFields: {'NewField': {$divide: [10, 2]}}}
+])
+// Out Put  ==>  "NewField" : 5.0
+
+// multiply Operator
+db.products.aggregate([
+{$match: {Unit: 'lt'}},
+{$addFields: {'NewField': {$multiply: [10, 2]}}}
+])
+// Out Put  ==> "NewField" : 20.0
+
+
+// sqrt Operator
+db.products.aggregate([
+{$match: {Unit: 'lt'}},
+{$addFields: {'NewField': {$sqrt: [9]}}}
+])
+// Out Put  ==>  "NewField" : 3.0
+
+
+// pow Operator
+db.products.aggregate([
+{$match: {Unit: 'lt'}},
+{$addFields: {'NewField': {$pow: [10, 3]}}}
+])
+// Out Put  ==>  "NewField" : 1000.0
+
+
+
+// mod Operator
+db.products.aggregate([
+{$match: {Unit: 'lt'}},
+{$addFields: {'NewField': {$mod: [10, 3]}}}
+])
+// Out Put  ==>  "NewField" : 1.0

@@ -1,0 +1,41 @@
+        MongoDB Aggregation
+
+/* insertOne Method */
+db.employee.insertOne(
+{
+    name: 'Kabir',
+    designation: 'Computer Engineer',
+    city: 'Sylhet',
+    salary: 45000.0
+    
+}
+)
+
+/* insertMany Method */
+db.getCollection('employee').insertMany(
+[
+{
+     name : "Dip Sarkar",
+     designation : "Software Engineer",
+     city : "London",
+     salary : 35000
+},
+{
+     name : "Jony",
+     designation : "Developer",
+     city : "Khulna",
+     salary : 55000
+},
+{
+     name : "Irin Parvin",
+     designation : "Designer",
+     city : "Pabna",
+     salary : 75000
+}
+]
+)
+
+
+
+
+

@@ -1,0 +1,25 @@
+        MongoDB Aggregation
+
+
+/* Projection After Joining  Method aggregate */
+
+
+db.products.aggregate([
+    { $lookup: { from: 'categories', localField: 'CategoryID', foreignField: 'CategoryID', as: 'Category' } },
+    { $lookup: { from: 'brands', localField: 'BrandID', foreignField: 'BrandID', as: 'Brand' } },
+    {
+        $project: {
+            _id: 0,
+            CategoryID: 1,
+            BrandID: 1,
+            ProductName: '$Name',
+            Price: { $toDouble: '$Price' },
+            Unit: 1,
+            Details: 1,
+            CreatedDate: 1,
+            ProductID: 1,
+            CategoryName: {$first: '$Category.Name' },
+            BrandName: {$first: '$Brand.Name' }
+        }
+    }
+])

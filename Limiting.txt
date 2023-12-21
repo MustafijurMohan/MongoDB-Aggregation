@@ -1,0 +1,13 @@
+        MongoDB Aggregation
+
+
+/* Limiting Method find */
+db.employee.find({}).limit(4)
+
+
+
+
+/* Limiting Method Aggregate */
+db.employee.aggregate([{$limit: 3}])
+
+

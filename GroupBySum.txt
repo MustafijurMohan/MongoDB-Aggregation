@@ -1,0 +1,6 @@
+        MongoDB Aggregation
+
+
+/* Group By Sum Method aggregate */
+
+db.employee.aggregate([{$group: {_id: '$city', Total: {$sum: '$salary'}}}])

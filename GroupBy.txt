@@ -1,0 +1,9 @@
+        MongoDB Aggregation
+
+
+/* Group By Uniqe Value Method aggregate */
+Duplicate data remove
+
+db.employee.aggregate([{$group: {_id: '$salary'}}])
+
+

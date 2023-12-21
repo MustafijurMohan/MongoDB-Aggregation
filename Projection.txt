@@ -1,0 +1,8 @@
+        MongoDB Aggregation
+
+
+/* Projection Method find */
+db.employee.find({}, {_id: 0, name: 1, designation: 1, city: 1})
+
+/* Projection Method aggregate */
+db.employee.aggregate([{$project: {_id: 0, name: 1, designation: 1}}])

@@ -1,0 +1,6 @@
+        MongoDB Aggregation
+
+
+/* Group By Average Method aggregate */
+
+db.employee.aggregate([{$group: {_id: '$city', Average: {$avg: '$salary'}}}])

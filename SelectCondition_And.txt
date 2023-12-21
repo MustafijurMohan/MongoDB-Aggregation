@@ -1,0 +1,18 @@
+        MongoDB Aggregation
+
+
+/* Select Match Condition And Operator Method find */
+db.employee.find({$and:[{salary: {$gt: 50000}}, {city: 'Sylhet'}]})
+db.employee.find({$or:[{salary: {$gt: 50000}}, {city: 'Sylhet'}]})
+
+
+
+
+/* Select Match Condition And Operator Method aggregate */
+db.employee.aggregate([{$match: {salary: {$gt: 50000}}}, {$match: {city: 'Sylhet'}}])
+db.employee.aggregate([{$match: {$and: [ {salary: {$gt: 50000}}, {city: 'Sylhet'} ]} }])
+db.employee.aggregate([{$match: {$or: [ {salary: {$gt: 50000}}, {city: 'Sylhet'} ]} }])
+
+
+
+
